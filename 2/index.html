@@ -46,20 +46,23 @@
  
 <script>
     var size = 16;
-    function changeSize(step) {
+    function changeSize(step) 
+    {
         size = Math.min(32, Math.max(12, size + step));
         document.body.style.fontSize = size + "px";
     }
-    function resetPage() {
+    function resetPage() 
+    {
         size = 16;
         document.body.style.fontSize = "";
     }
 
-    document.addEventListener("keydown", function (e) {
-    if (e.key === "+" || e.key === "=") changeSize(2);
-    else if (e.key === "-") changeSize(-2);
-    else if (e.key === "0") resetPage();
-});
+    document.addEventListener("keydown", function (e) 
+    {
+        if (e.key === "+" || e.key === "=") changeSize(2);
+        else if (e.key === "-") changeSize(-2);
+        else if (e.key === "0") resetPage();
+    });
 </script>
 
 </body>
