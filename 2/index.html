@@ -22,7 +22,45 @@
 
 <h3>2. Seek universal usability</h3>
 <p></p>
-<p style="color:white">Can you see me?</p>
+<p style="color:black">An interface should work for everyone: beginners and experts, young and old, and people with different abilities or devices.</p>
+
+<p style="color:black">So in this page you are able to zoom in and out of this page for people who find it better to have letters bigger such as older people.
+    Also implemented is a shortcut of just pressing + and - to zoom in and out.
+</p>
+
+<h3>Try it</h3>
+<p>Change the page to suit you:</p>
+<button onclick="changeSize(-2)" >A-</button>
+<button onclick="changeSize(2)" >A+</button>
+<button onclick="resetPage()" >Reset</button>
+
+<p><small>Shortcuts: + / - text size, 0 to reset</small></p>
+
+<h3>Examples such as:</h3>
+<ul>
+    <li>Adjustable text size for people with low vision</li>
+    <li>High contrast colors for people who struggle to see light text</li>
+    <li>Keyboard shortcuts for experts, simple menus for beginners</li>
+    <li>Pages that work on phones as well as computers</li>
+</ul>
+ 
+<script>
+    var size = 16;
+    function changeSize(step) {
+        size = Math.min(32, Math.max(12, size + step));
+        document.body.style.fontSize = size + "px";
+    }
+    function resetPage() {
+        size = 16;
+        document.body.style.fontSize = "";
+    }
+
+    document.addEventListener("keydown", function (e) {
+    if (e.key === "+" || e.key === "=") changeSize(2);
+    else if (e.key === "-") changeSize(-2);
+    else if (e.key === "0") resetPage();
+});
+</script>
 
 </body>
 </html>
