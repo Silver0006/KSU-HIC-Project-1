@@ -3,6 +3,7 @@
     <head>
         <title>#5 Prevent errors - The Eight Golden Rules of Interface Design</title>
         <link rel=stylesheet href="../index.css">
+        <script src="js-regex.js" defer></script>
     </head>
 <body>
 
@@ -19,6 +20,22 @@
     <li><a href="../7/index.html">7. Keep users in control</a></li>
     <li><a href="../8/index.html">8. Reduce short-term memory load</a></li>
 </ul>
+
+<h3>5. Prevent errors</h3>
+<p>Errors should be avoided whenever possible. It makes sense; ideally you don't want errors to happen, but sometimes it's unavoidable. This is why it is important to make sure serious errors don't affect the user negatively. If an error occurs, the error should be handled cleanly. If the error is cause by the user, it should provide feedback to help them correct the mistake. A mistake should be easily fixable. Shneiderman's website provides the example of a user entering their email.<sup><a href="#ref-1">1</a></sup> If they type something wrong you shouldn't make them start over. Point out the error and allow them to correct it. Prompting before making important decisions is also important. You want to make sure that the user fully understands what they are doing. We're not just correcting for computer errors, but human error. The clearer you make an option, the safer you are.</p>
+<p>To demo this idea we ask that you try typing a word in the prompts below. The prompt will then provide an error message telling you how to give a valid input. Each prompt does they same thing; they are just coded differently to account for different browser support. If their is an issue with one try the other.</p>
+
+<h5><u>HTML5 input box</u></h5>
+<p>If the page reloads you got it right!</p>
+<form>
+<input type="text" id="html5-regex" pattern="[A-Za-z]{5,5}[0-9]{3,3}" title="Five letters then 3 numbers. Ex: hello123"><br>
+<input type="submit" value="Submit">
+</form>
+
+<h5 id="js-msg">Java script not supported</h5>
+
+<h4>References</h4>
+<a id="ref-1" href="https://www.cs.umd.edu/~ben/goldenrules.html">1. Golden Rules on Ben Shneiderman's Website</a>
 
 </body>
 </html>
