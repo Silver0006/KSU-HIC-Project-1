@@ -20,5 +20,38 @@
     <li><a href="index.html">8. Reduce short-term memory load</a></li>
 </ul>
 
+<h3>8. Reduce short-term memory load</h3>
+<p></p>
+<p style="color:black">Users can't remember every single thing when using your interface so helping the user by informing/reminding the user what a button does or help them with an action.</p>
+
+<p style="color:black">This page you will try to remember a code and type it into the text box. Try your best to remember it.</p>
+
+<h3>Try it</h3>
+
+<p id="bad-code">Your code is: <b>4 8 2 9 1 7</b></p>
+<button type="button" onclick="hideCode()">Next</button>
+<div id="bad-step" style="display:none">
+    <p>Enter your code:</p>
+    <input type="text">
+</div>
+
+<p style="color:black">A little challenging? if not its annoying to remember the code try the next one where the code doesn't disappear </p>
+
+<p>Your code is: <b>6 3 8 5 4 2 </b></p>
+<p>Enter your code:</p>
+<input type="text">
+
+<p style="color:black">The last golden rule's main idea is to help the user by reducing memory load by making sure they don't need to remember many stuff while completing a task.
+    The second text box's code being visible reduces the need to remember the code from the user.
+</p>
+
+<script>
+    function hideCode() 
+    {
+        document.getElementById("bad-code").style.display = "none";
+        document.getElementById("bad-step").style.display = "block";
+    }
+</script>
+
 </body>
 </html>
