@@ -20,5 +20,46 @@
     <li><a href="../8/index.html">8. Reduce short-term memory load</a></li>
 </ul>
 
+<h3>4. Permit easy reversal of actions</h3>
+<p></p>
+<p style="color:black">Users are fallible so ensuring that there is an easy way to retrive their data they accidently deleted is important to a good interface.</p>
+
+<p style="color:black">This page is pretty simple. Type anything in the box and if you so happen to click the Clear button you can undo your mistake.</p>
+
+<h3>Try it</h3>
+
+<form id="textbox">
+    <input type="text" id="box">
+    <input type="submit" value="Submit">
+    <button type="button" onclick="clearBox()">Clear</button>
+    <button type="button" onclick="undo()">Undo</button>
+</form>
+<p id="message"></p>
+
+<p style="color:black">By ensuring you have a fail safe in an undo button it unsures that even when the user messes up, the interface will save a backup for the user. 
+    Which is the 6th golden rule. 
+</p>
+
+<script>
+    var saved = "";
+
+    function clearBox()
+    {
+        saved = document.getElementById("box").value;
+        document.getElementById("box").value = "";
+    }
+
+    function undo()
+    {
+        document.getElementById("box").value = saved;
+    }
+
+    document.getElementById("textbox").addEventListener("submit", function (e)
+    {
+        e.preventDefault();
+        document.getElementById("message").textContent = "Submitted: " + document.getElementById("box").value;
+    });
+</script>
+
 </body>
 </html>
