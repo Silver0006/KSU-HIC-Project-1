@@ -20,5 +20,52 @@
     <li><a href="../8/index.html">8. Reduce short-term memory load</a></li>
 </ul>
 
+<h3>4. Design dialogs to yield closure</h3>
+<p></p>
+<p style="color:black">The ending to a good interface is confirmation that an action went through. If there is no confirmation at the end of an action, the user may get confused and revert the action or spam it multiple times.
+    A clear confirmation allows the user to understand that they are done on their end for that action.
+</p>
+
+<p style="color:black"> In this page you are going to create an account. </p>
+
+<h3>Try it</h3>
+
+<form id="bad-form">
+    <p>Username:</p>
+    <input type="text" required><br>
+    <p>Password:</p>
+    <input type="password" required><br>
+    <input type="submit" value="Submit">
+</form>
+
+<p style="color:black"> Did you create an account? You are unsure right?</p>
+
+<h3>Try this now</h3>
+
+<form id="good-form">
+    <p>Username:</p>
+    <input type="text" required><br>
+    <p>Password:</p>
+    <input type="password" required><br>
+    <input type="submit" value="Submit">
+    <p id="good-message"></p>
+</form>
+
+<p style="color:black"> As you can see it told you that you made an account so you don't need to press the button again or reenter your credentials.
+    This satisfies the 4th golden rule in which making sure there is closure during an interaction between the user and an interface.
+</p>
+
+<script>
+    document.getElementById("bad-form").addEventListener("submit", function (e) 
+    {
+        e.preventDefault();
+    });
+    document.getElementById("good-form").addEventListener("submit", function (e) 
+    {
+        e.preventDefault();
+        document.getElementById("good-message").textContent = "Done! Account created successfully!";
+    });
+</script>
+
 </body>
 </html>
